@@ -9,7 +9,7 @@ body {
       background-color: #D35428;
       padding: 1rem 0;
     }
-    .header  {
+    .header {
   position: fixed;
   top: 0;
   left: 0;
@@ -52,7 +52,6 @@ body {
       text-decoration: underline;
     }
 
-    /* DropDown */
     ul {
       list-style: none;
       margin: 0;
@@ -99,11 +98,9 @@ body {
       background-color: #f7f5f4f0;
     }
 
-    /* Show menu on hover */
     .dropdown:hover .dropdown-menu {
       display: block;
     }
-    /* Mobile: stack columns */
 @media (max-width:768px){
   .header-container{flex-direction:column;}
   .nav ul, .header{flex:none;width:100%;}
@@ -111,33 +108,15 @@ body {
     .hero-flex {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
 .hero-image img {
-  max-width: 100%;
-  width: 400px;
-  border-radius: 8px;
+  border-radius: 0px;
 }
 
-.hero-text {
-  flex: 1;
-  min-width: 280px;
-}
 
-.hero-text h1 {
-  color: #D35428;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
 
 @media (max-width: 768px) {
   .hero-flex {
@@ -163,7 +142,7 @@ body {
   font-weight: 600;
   font-size: 1.1rem;
   color: #333;
-  padding-top: 10%;
+  padding-top: 1%;
 }
 
 .section-title .line {
@@ -202,20 +181,18 @@ body {
     .cta-button:hover {
       background-color: hsl(26, 92%, 52%);
     }
-/*course-content*/
-/* ——— 2‑column “Course vs Why Choose” layout ——— */
 .course-container{
-  display:flex;            /* side‑by‑side on desktop   */
+  display:flex;            
   gap:48px;
-  flex-wrap:wrap;          /* stack on small screens    */
+  flex-wrap:wrap;          
   margin-top:40px;
 }
 
-.course-text{             /* LEFT column               */
-  flex:2 1 420px;          /* grow 2× wider than right  */
+.course-text{             
+  flex:2 1 420px;         
 }
 
-.why-Choose{              /* RIGHT column              */
+.why-Choose{              
   flex:1 1 320px;
 }
 .course-text h3{
@@ -223,31 +200,27 @@ body {
   color: #D35428;
 }
 
-/* Headings in orange */
 .course-text h1,
 .why-Choose h1{
-  color:#c5511b;           /* adjust to your brand tint */
+  color:#c5511b;           
   margin-top:0;
 }
 
-/* Snapshot bullets (left)  */
 .course-text ul{
   margin-left:20px;
   line-height:1.7;
 }
-/* ——— ensure bullets show for the Course Snapshot list ——— */
 .course-text ul{
-  list-style: disc;          /* show regular • bullets        */
-  list-style-position: outside; /* keep bullet outside text   */
-  margin-left: 20px;         /* indent so bullets aren’t flush */
+  list-style: disc;          
+  list-style-position: outside; 
+  margin-left: 20px;         
 }
 
 .course-text ul li{
-  margin-bottom: 6px;        /* even spacing between items    */
+  margin-bottom: 6px;        
 }
 
 
-/* “Why Choose” bullets with magnifier icon */
 .why-Choose ul{
   list-style:none;
   padding-left:0px;
@@ -265,7 +238,6 @@ body {
   top:0;
 }
 
-/* Register button */
 .register-btn{
   display:inline-block;
   background:#c5511b;
@@ -279,49 +251,42 @@ body {
 }
 .register-btn:hover{background:#a24115;}
 
-/* Mobile: stack columns */
 @media (max-width:768px){
   .course-container{flex-direction:column;}
   .course-text, .why-Choose{flex:none;width:100%;}
 }
 
-    /* ——— 2 × 2 card grid inside “Course Information” ——— */
 .course-info{
-  /* turn the row into a responsive 2‑column grid */
-  display:grid;                         /* replaces the old flex */
-  grid-template-columns:repeat(2,1fr);  /* exactly 2 columns */
-  gap:32px;                             /* space between cards */
-  margin-top:40px;                      /* keep your spacing */
+  
+  display:grid;                         
+  grid-template-columns:repeat(2,1fr);  
+  gap:32px;                             
+  margin-top:40px;                      
 }
 
-/* each course info item becomes a card */
 .course-column{
-  background: #D35428;        /* blue card colour */
+  background: #D35428;        
   color:#fff;
   padding:40px 32px;
   border-radius:24px;
   box-sizing:border-box;
-  position:relative;         /* needed for the icon */
+  position:relative;         
   transition:transform .25s ease,box-shadow .25s ease;
 }
 
-/* optional “spotlight” card — just add class="course-column highlight" in HTML if you like */
 .course-column.highlight{background:#0c111e;}
 
-/* headings & body copy */
 .course-column h3{margin:0 0 18px;font:700 1.6rem/1.2 "Inter",sans-serif;}
 .course-column ul{margin:0 0 0 18px;font:400 1rem/1.6 "Inter",sans-serif;}
 
-/* subtle hover lift */
+
 .course-column:hover{
   transform:translateY(-6px) scale(1.02);
   box-shadow:0 14px 26px rgba(0,0,0,.15);
 }
 
-/* ——— (optional) add emoji icons automatically ——— */
-/* comment‑out this whole block if you don’t want icons */
 .course-column::after{
-  content:"🎯";               /* fallback icon */
+  content:"🎯";               
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -333,32 +298,30 @@ body {
   top:32px;right:32px;
 }
 
-/* pick unique icons per card (1 → 4). Delete or change as you wish */
-.course-column:nth-child(1)::after{content:"⏱";} /* duration & age */
-.course-column:nth-child(2)::after{content:"🎤";} /* speaking practice */
-.course-column:nth-child(3)::after{content:"🏆";} /* outcomes / goals */
-.course-column:nth-child(4)::after{content:"📜";} /* certificate info */
+.course-column:nth-child(1)::after{content:"⏱";} 
+.course-column:nth-child(2)::after{content:"🎤";} 
+.course-column:nth-child(3)::after{content:"🏆";} 
+.course-column:nth-child(4)::after{content:"📜";} 
 
-/* ——— stack the cards on small screens ——— */
 @media(max-width:640px){
   .course-info{grid-template-columns:1fr;}
   .course-column{padding:32px 24px;}
   .course-column::after{top:24px;right:24px;}
 }
 
-    /* Feature in*/
     .slider-container {
       width: 100%;
       overflow: hidden;
-      height: 200px; /* increase height as needed */
+      height: 200px; 
       background-color: #000000;
       position: relative;
+      margin-top: 5%;
     }
 
     .slider-track {
       display: flex;
       width: max-content;
-      animation: scroll 100s linear infinite;
+      animation: scroll 60s linear infinite;
     }
 
     .slider-container::-webkit-scrollbar {
@@ -378,15 +341,14 @@ body {
 
     @keyframes scroll {
       0% { transform: translateX(0); }
-      25% { transform: translateX(-25%); }
-      30% { transform: translateX(-2%); } /* hold */
+      25% { transform: translateX(-20%); }
+      30% { transform: translateX(-25%); } 
       55% { transform: translateX(-50%); }
-      60% { transform: translateX(-2%); } /* hold */
+      60% { transform: translateX(-55%); } 
       85% { transform: translateX(-75%); }
-      90% { transform: translateX(-2%); } /* hold */
+      90% { transform: translateX(-85%); } 
       100% { transform: translateX(-100%); }
     }
-    /*why choose us*/
     .why-section {
       display: flex;
       align-items: center;
@@ -434,7 +396,6 @@ body {
         text-align: left;
       }
     }
-    /*Course Duration*/
     .section-title {
       display: flex;
       align-items: center;
@@ -464,15 +425,14 @@ body {
     }
     .grid{
   display:grid;
-  grid-template-columns:repeat(2, 1fr); /* exactly 2 columns */
-  gap:32px;                              /* space between cards */
+  grid-template-columns:repeat(2, 1fr); 
+  gap:32px;                              
   max-width:1200px;
   margin:50px auto;
 }
 
-/* --- each card --- */
 .card{
-  background:#D35428;        /* blue background */
+  background:#D35428;        
   color:#fff;
   padding:40px 40px;
   border-radius:24px;
@@ -482,34 +442,23 @@ body {
   transition:transform .25s ease, box-shadow .25s ease;
 }
 
-/* optional spotlight card — just add "highlight" class in HTML */
 .card.highlight{
-  background:#0c111e;        /* dark background for emphasis */
+  background:#0c111e;        
 }
 
-/* icon box (emoji or inline SVG) */
-.icon{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:80px;
-  height:80px;
-  background:#0c111e;
-  border-radius:18px;
-  font-size:40px;
+.lineheight
+{
+  line-height:5px;
 }
 
-/* headings & text */
 .text h3{margin:0 0 18px;font:700 1.6rem/1.2 "Inter",sans-serif;}
 .text p {margin:0;font:400 1rem/1.6 "Inter",sans-serif;}
 
-/* hover lift effect */
 .card:hover{
   transform:translateY(-8px) scale(1.03);
   box-shadow:0 18px 28px rgba(0,0,0,.16);
 }
 
-/* --- mobile: stack cards in one column --- */
 @media(max-width:640px){
   .grid{grid-template-columns:1fr;}
   .card{gap:24px;flex-direction:column;}
@@ -523,7 +472,7 @@ body {
 .register-button {
   display: inline-block;
   padding: 18px 60px;
-  background-color: #cc5524; /* Orange tone */
+  background-color: #cc5524; 
   color: #fff;
   font-weight: 700;
   font-size: 1.2em;
@@ -533,7 +482,7 @@ body {
 }
 
 .register-button:hover {
-  background-color: #b2451e; /* Darker on hover */
+  background-color: #b2451e; 
 }
 
     
@@ -567,7 +516,6 @@ body {
         width: 100%;
       }
     }
-    /* Downloads Section Styling */
 .downloads-section {
   max-width: 900px;
   margin: 50px auto;
@@ -594,7 +542,6 @@ body {
   font-size: 1.2rem;
 }
 
-/* Module List */
 .module-list {
   list-style: none;
   padding: 0;
@@ -651,26 +598,24 @@ body {
   margin-left: 15px;
 }
 
-/* fixed 3‑column grid (desktop) */
 .benefits-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr); /* —— 3 columns —— */
-  gap:40px 60px;                       /* row gap | column gap */
+  grid-template-columns:repeat(3,1fr); 
+  gap:40px 60px;                       
 }
 
-/* each box */
 .benefit-box h4{
   color:#cc5524;
   font-size:24px;
-  margin:0 0 12px;
+  margin: 50px;
+  margin-top: auto;
 }
 .benefit-box p{
   color:#333;
   line-height:1.6;
-  margin:0;
+  margin: 50px;
 }
 
-/* —— tablet: 2 columns —— */
 @media(max-width: 960px){
   .benefits-grid{
     grid-template-columns:repeat(2,1fr);
@@ -678,7 +623,6 @@ body {
   }
 }
 
-/* —— phone: 1 column —— */
 @media(max-width: 600px){
   .benefits-grid{
     grid-template-columns:1fr;
@@ -689,27 +633,24 @@ body {
   }
 }
 
-/*— Trainer profile layout —*/
 .trainer-profile{
   display:flex;
   align-items:center;
   gap:60px;
-  flex-wrap:wrap;            /* stacks on narrow screens */
+  flex-wrap:wrap;            
   padding:60px 20px;
   max-width:1200px;
   margin:auto;
   font-family:'Inter',sans-serif;
 }
 
-/*— Circular photo —*/
 .trainer-img img{
-  width:420px;               /* adjust size as needed */
+  width:420px;              
   max-width:100%;
   border-radius:50%;
   object-fit:cover;
 }
 
-/*— Text block —*/
 .trainer-info{flex:1;min-width:280px;}
 
 .trainer-cred{
@@ -722,7 +663,7 @@ body {
 .trainer-name{
   font-size:2.6rem;
   margin:0 0 22px;
-  color:#cc5524;             /* brand orange */
+  color:#cc5524;  
   font-weight:700;
   line-height:1.2;
 }
@@ -733,7 +674,6 @@ body {
   color:#333;
 }
 
-/*— Mobile tweaks —*/
 @media(max-width:780px){
   .trainer-profile{flex-direction:column;text-align:center;}
   .trainer-img img{width:320px;margin-bottom:30px;}
@@ -824,7 +764,6 @@ body {
   font-weight: 500;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
@@ -834,7 +773,6 @@ body {
     white-space: normal;
   }
 }
-/* ── LAYOUT WRAPPER ─────────────────────────────── */
   .contact-section{
     font-family:"Inter",sans-serif;
     padding:50px 20px;
@@ -850,7 +788,6 @@ body {
     display:flex;flex-wrap:wrap;column-gap:70px;row-gap:50px;
   }
 
-  /* ── LEFT COLUMN : FORM ─────────────────────────── */
   .contact-form{flex:1 1 340px;}
   .contact-form h2{color:#cb5523;font-size:28px;margin-bottom:22px;}
 
@@ -862,12 +799,11 @@ body {
   }
   .contact-form textarea{resize:vertical;height:140px;}
 
-  /* File upload */
   .file-upload{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color: #cb5523;}
   .file-upload label{display:flex;align-items:center;gap:6px;font-weight:600;cursor:pointer;color: #cb5523;}
   .file-upload input[type="file"]{display:none;color: #cb5523;}
   .attachment-count{font-size:14px;color:#555;font-weight:500;}
-/*newletter*/
+
 .newsletter {
   display: flex;
   align-items: center;
@@ -881,7 +817,7 @@ body {
   height: 16px;
   margin: 0;
   vertical-align: middle;
-  accent-color: #007bff; /* Optional: makes the checkbox blue */
+  accent-color: #007bff; 
 }
 
 .newsletter label {
@@ -891,14 +827,12 @@ body {
 }
 
 
-  /* Submit */
   .submit-btn{
     background:#cb5523;color:#fff;font-size:20px;font-weight:700;
     border:none;border-radius:50px;padding:14px;cursor:pointer;
   }
   .recaptcha-note{font-size:12px;color:#666;}
 
-  /* ── RIGHT COLUMN : INFO ────────────────────────── */
   .contact-info{flex:1 1 340px;}
   .contact-info h2{color:#cb5523;font-size:28px;margin-bottom:18px;}
   .contact-info p{line-height:1.6;margin-bottom:18px;}
@@ -917,12 +851,11 @@ body {
   .hours-area h3{color:#cb5523;font-size:24px;margin:22px 0 10px;}
   .hours-area span{color:#cb5523;font-weight:700;}
 
-  /* ── RESPONSIVE ─────────────────────────────────── */
   @media(max-width:768px){
     .contact-container{flex-direction:column;}
     .contact-line{white-space:normal;}
   }
-  /* Map Styling (No Scroll Bar) */
+  
         .map {
             overflow: hidden;
             width: 100%;
@@ -932,11 +865,10 @@ body {
 
         iframe {
             width: 100%;
-            height: 400px; /* Ensure proper height */
+            height: 400px; 
             border: 0;
             pointer-events: none;
         }
- /* ── break the footer out of any narrow parent ───────── */
 footer 
 {
   background-color: #D35428;
@@ -958,8 +890,8 @@ footer .hr{
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Adjust spacing here */
-  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 10px; 
+  flex-wrap: wrap; 
 }
 
 .footer-links a {
@@ -978,49 +910,32 @@ footer a
 footer a:hover{
   text-decoration: underline;
 }
-
-/* mobile tweak */
-@media(max-width:600px){
-  .full-bleed nav{display:flex;flex-direction:column;gap:8px;}
+.fline
+{
+  line-height: 2%;
 }
 
-
-
-
-
-/* ————— Tablet & small-laptop (≤ 992 px) ————— */
 @media (max-width: 992px) {
 
-  /* Header: shrink logo and space */
   .logo img        {height: 70px;}
   .header-container{padding: 0 1rem;}
 
-  /* Nav: add gentle wrap instead of overflow */
   nav ul           {flex-wrap: wrap; gap: .75rem;}
 
-  /* Hero */
-  .hero-image img  {width: 300px;}        /* keep image reasonable */
+  .hero-image img  {width: 300px;}        
   .hero-text h1    {font-size: 2rem;}
 
-  /* Two-column snapshots → equal width */
   .course-text,
   .why-Choose      {flex:1 1 100%;}
-
-  /* 2 × 2 info cards → single column */
   .course-info     {grid-template-columns: 1fr;}
-
-  /* Feature-logo slider: lower height */
   .slider-container{height: 140px;}
   .slider-track img{height: 70px;}
 
-  /* Benefits grid: 3 → 2 columns */
   .benefits-grid   {grid-template-columns: repeat(2,1fr);}
 
-  /* Stats cards: 4 → 2 columns */
   .stats-grid      {grid-template-columns: repeat(2,1fr);}
 }
 
-/* ————— Phones (≤ 576 px) ————— */
 @media (max-width: 600px) {
   nav, article {
     width: 100%;
